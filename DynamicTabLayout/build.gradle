@@ -44,11 +44,11 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from(components.findByName('release'))
+                from (components["release"])
 
-                groupId = 'com.github.Aln9435'
-                artifactId = 'DynamicTabLayout'
-                version = '1.0'
+                groupId = "com.github.Aln9435"
+                artifactId = "DynamicTabLayout"
+                version = "1.0"
             }
         }
     }
