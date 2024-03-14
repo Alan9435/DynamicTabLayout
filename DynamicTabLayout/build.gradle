@@ -40,14 +40,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-afterEvaluate{
-    publishing{
-        publications{
-            release(MavenPublication){
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
                 from components.release
 
-                groupId='com.github.Aln9435'
-                artifactId = 'DynamicTabLayout'
+                groupId = 'com.github.Aln9435'
+                artifactId = 'DynamicTabLayoutLibrary'
                 version = '1.0'
             }
         }
