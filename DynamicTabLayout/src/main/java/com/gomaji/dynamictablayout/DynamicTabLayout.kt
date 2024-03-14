@@ -46,7 +46,7 @@ class DynamicTabLayout @JvmOverloads constructor(
             val minWidthField: Field = TabLayout::class.java.getDeclaredField(scrollableTabMinWidth)
             minWidthField.apply {
                 isAccessible = true //set to variable
-                set(this, tabMinWidth) // Set the variable scrollableTabMinWidth of the current instance (this) to tabMinWidth
+                set(this@DynamicTabLayout, tabMinWidth) // Set the variable scrollableTabMinWidth of the current instance (this) to tabMinWidth
             }
 
             //default : give maxWidth according to dpi
@@ -54,10 +54,10 @@ class DynamicTabLayout @JvmOverloads constructor(
             val maxWidthField: Field = TabLayout::class.java.getDeclaredField(requestedTabMaxWidth)
             maxWidthField.apply {
                 isAccessible = true
-                set(this, resources.displayMetrics.widthPixels)
+                set(this@DynamicTabLayout, resources.displayMetrics.widthPixels)
             }
         } catch (e: Exception) {
-            Log.e("SmoothTabLayout", "error: $e" )
+            Log.e("DynamicTabLayout", "error: $e" )
         }
     }
 }
